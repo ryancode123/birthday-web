@@ -7,25 +7,26 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
             text-align: center;
-            padding: 50px;
             overflow: hidden;
-            position: relative;
-            animation: backgroundChange 8s ease infinite;
+            padding: 0;
+            margin: 0;
+            background: #f0f8ff;
+            animation: backgroundChange 10s ease-in-out infinite;
         }
 
         @keyframes backgroundChange {
-            0% { background-color: #f0f8ff; }
-            25% { background-color: #ffebcd; }
-            50% { background-color: #fffacd; }
-            75% { background-color: #faebd7; }
-            100% { background-color: #f0f8ff; }
+            0% { background: #f0f8ff; }
+            25% { background: #ffebcd; }
+            50% { background: #fffacd; }
+            75% { background: #faebd7; }
+            100% { background: #f0f8ff; }
         }
 
         h1 {
             color: #ff6347;
-            font-size: 50px;
+            font-size: 60px;
+            margin-top: 50px;
             animation: bounce 1s infinite alternate;
         }
 
@@ -81,7 +82,7 @@
         .balloon {
             position: absolute;
             bottom: -50px;
-            animation: floatUp 4s infinite ease-in-out;
+            animation: floatUp 6s infinite ease-in-out;
             width: 80px;
             height: 120px;
             border-radius: 50%;
