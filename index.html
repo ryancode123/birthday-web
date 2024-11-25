@@ -10,20 +10,25 @@
             background-color: #f0f8ff;
             text-align: center;
             padding: 50px;
+            overflow: hidden; /* Ẩn bóng bay ngoài khung */
+            position: relative;
         }
+
+        h1 {
+            color: #ff6347;
+            font-size: 36px;
+        }
+
         .birthday-message {
             color: #2e8b57;
             font-size: 24px;
             margin-top: 20px;
         }
+
         .birthday-photo {
             margin-top: 20px;
         }
-        .cake {
-            display: none;
-            margin-top: 20px;
-            width: 300px;
-        }
+
         .star-button {
             background-color: #f8c200;
             color: white;
@@ -33,14 +38,44 @@
             cursor: pointer;
             margin-top: 20px;
         }
+
         .star-button:hover {
             background-color: #f8b500;
         }
+
+        /* Hiệu ứng bóng bay */
+        .balloon {
+            position: absolute;
+            bottom: -50px;
+            animation: floatUp 5s infinite ease-in;
+            width: 70px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle at top, #ff69b4, #ff1493);
+            box-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
+        }
+
+        /* Tạo hiệu ứng bóng bay bay lên */
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-600px) rotate(360deg);
+            }
+        }
+
+        /* Tạo nhiều bóng bay với các độ lớn và vị trí khác nhau */
+        .balloon:nth-child(1) { left: 20%; animation-duration: 4s; animation-delay: 0s; }
+        .balloon:nth-child(2) { left: 40%; animation-duration: 6s; animation-delay: 2s; }
+        .balloon:nth-child(3) { left: 60%; animation-duration: 5s; animation-delay: 1s; }
+        .balloon:nth-child(4) { left: 80%; animation-duration: 7s; animation-delay: 3s; }
+
     </style>
 </head>
 <body>
-    <h1>Tập thể 11b6 chúng em chúc cô Thanh sinh nhật vui vẻ!</h1>
-    <p class="birthday-message">Trang web chúc mừng sinh nhật cô Thanh. Chúc cô một ngày thật tuyệt vời!</p>
+    <h1>Happy Birthday Cô Thanh!</h1>
+    <p class="birthday-message">Tập thể 11B6 chúc cô Thanh sinh nhật vui vẻ. Mãi yêu cô!</p>
     
     <!-- Hình cô Thanh -->
     <img src="cothanh.jpg" alt="Hình cô Thanh" class="birthday-photo" width="300">
@@ -49,12 +84,20 @@
     <button class="star-button" onclick="showCake()">Bấm vào đây để nhận bánh kem!</button>
     
     <!-- Bánh kem sẽ hiển thị khi bấm nút -->
-    <img src="cake.jpg" alt="Bánh kem" class="cake" id="cake-image" width="300">
+    <div id="cake-message" style="display:none; margin-top: 20px;">
+        <p style="font-size: 24px; color: #ff6347;">Chúc cô ăn bánh kem vui vẻ!</p>
+    </div>
     
+    <!-- Thêm bóng bay -->
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
     <script>
         function showCake() {
-            // Hiển thị bánh kem
-            document.getElementById("cake-image").style.display = "block";
+            // Hiển thị thông điệp bánh kem
+            document.getElementById("cake-message").style.display = "block";
         }
     </script>
 </body>
