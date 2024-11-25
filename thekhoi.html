@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng sinh nhật cô Thanh</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            width: 90%;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #e85d75;
+            margin: 10px 0;
+        }
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 10px 0;
+        }
+        .class-photo {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .cake {
+            margin-top: 20px;
+            animation: bounce 2s infinite ease-in-out;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        .balloons {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .balloons img {
+            width: 80px;
+            animation: float 3s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Chúc mừng sinh nhật cô Thanh! 🎉</h1>
+        <p>Tập thể 11B6 chúng em chúc cô có một ngày thật vui vẻ, tràn đầy niềm vui và ý nghĩa!</p>
+        <p>Mãi yêu cô ❤️</p>
+
+        <!-- Hình ảnh lớp học -->
+        <img src="https://drive.google.com/file/d/1tVLvWwQPTJ6FuIrWgvJCTORkHuuJ0Zku/view?usp=drive_link" alt="Hình cô Thanh" class="class-photo">
+
+
+        <!-- Hình bánh kem -->
+        <img src="https://i.imgur.com/BC3oSdo.png" alt="Bánh sinh nhật" class="cake">
+
+        <!-- Bóng bay -->
+        <div class="balloons">
+            <img src="https://i.imgur.com/2EJr55k.png" alt="Balloon">
+            <img src="https://i.imgur.com/2EJr55k.png" alt="Balloon">
+            <img src="https://i.imgur.com/2EJr55k.png" alt="Balloon">
+        </div>
+    </div>
+</body>
+</html>
