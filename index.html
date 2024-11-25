@@ -10,8 +10,17 @@
             background-color: #f0f8ff;
             text-align: center;
             padding: 50px;
-            overflow: hidden; /* Ẩn các phần ngoài khung */
+            overflow: hidden;
             position: relative;
+            animation: backgroundChange 8s ease infinite;
+        }
+
+        @keyframes backgroundChange {
+            0% { background-color: #f0f8ff; }
+            25% { background-color: #ffebcd; }
+            50% { background-color: #fffacd; }
+            75% { background-color: #faebd7; }
+            100% { background-color: #f0f8ff; }
         }
 
         h1 {
@@ -43,12 +52,8 @@
         }
 
         @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-            }
-            to {
-                transform: translateX(0);
-            }
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
         }
 
         .star-button {
@@ -77,8 +82,8 @@
             position: absolute;
             bottom: -50px;
             animation: floatUp 4s infinite ease-in-out;
-            width: 70px;
-            height: 100px;
+            width: 80px;
+            height: 120px;
             border-radius: 50%;
             background: radial-gradient(circle at top, #ff69b4, #ff1493);
             box-shadow: 0 0 15px rgba(255, 105, 180, 0.8);
@@ -87,14 +92,8 @@
 
         /* Tạo hiệu ứng bóng bay bay lên */
         @keyframes floatUp {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-600px) rotate(360deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-800px) rotate(360deg); opacity: 0; }
         }
 
         /* Tạo bánh sinh nhật */
@@ -137,31 +136,44 @@
             height: 100px;
             background: radial-gradient(circle, rgba(255, 69, 0, 1) 10%, transparent 50%);
             border-radius: 50%;
-            animation: fireworks 1.5s ease-out forwards;
+            animation: fireworks 2s ease-out forwards;
             display: none;
         }
 
         @keyframes fireworks {
-            0% {
-                transform: scale(0);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(10);
-                opacity: 0;
-            }
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(10); opacity: 0; }
         }
 
         .cake.show {
             display: block;
         }
 
-        /* Tạo hiệu ứng bóng bay ngẫu nhiên */
-        .balloon:nth-child(1) { left: 15%; animation-duration: 4s; animation-delay: 0s; }
-        .balloon:nth-child(2) { left: 35%; animation-duration: 5s; animation-delay: 2s; }
-        .balloon:nth-child(3) { left: 55%; animation-duration: 6s; animation-delay: 3s; }
-        .balloon:nth-child(4) { left: 75%; animation-duration: 7s; animation-delay: 4s; }
+        /* Tạo hiệu ứng ánh sáng */
+        .lights {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 1) 20%, transparent 60%);
+            border-radius: 50%;
+            animation: lightsGlow 2s ease-in-out infinite;
+            opacity: 0;
+        }
 
+        @keyframes lightsGlow {
+            0% { opacity: 0.8; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 0.8; transform: scale(0.9); }
+        }
+
+        /* Hiệu ứng bóng bay ngẫu nhiên */
+        .balloon:nth-child(1) { left: 10%; animation-duration: 5s; animation-delay: 0s; }
+        .balloon:nth-child(2) { left: 30%; animation-duration: 6s; animation-delay: 1s; }
+        .balloon:nth-child(3) { left: 50%; animation-duration: 7s; animation-delay: 2s; }
+        .balloon:nth-child(4) { left: 70%; animation-duration: 8s; animation-delay: 3s; }
+        .balloon:nth-child(5) { left: 90%; animation-duration: 9s; animation-delay: 4s; }
     </style>
 </head>
 <body>
@@ -187,6 +199,10 @@
     <div class="balloon"></div>
     <div class="balloon"></div>
     <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <!-- Hiệu ứng ánh sáng chớp -->
+    <div class="lights"></div>
 
     <script>
         function startCelebration() {
@@ -205,6 +221,10 @@
             var fireworks = document.getElementById("fireworks");
             fireworks.style.display = "block";
             fireworks.style.animationPlayState = "running"; // Kích hoạt hiệu ứng pháo bông
+
+            // Hiển thị ánh sáng
+            var lights = document.querySelector('.lights');
+            lights.style.animationPlayState = "running"; // Kích hoạt hiệu ứng ánh sáng
         }
     </script>
 </body>
